@@ -5,10 +5,10 @@ app.use(express.static('client/build'));
 // let the react app to handle any unknown routes 
 // serve up the index.html if express does'nt recognize the route
 const path = require('path');
+app.get("/hello",(req,res)=>res.send("Is it working?"))
 app.get('*', (req, res) => {
 res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
-app.get("/hello",(req,res)=>res.send("Is it working?"))
 // if not in production use the port 3000
 const PORT = process.env.PORT || 5000;
 console.log('server started on port:',PORT);
