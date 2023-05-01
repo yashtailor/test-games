@@ -8,6 +8,7 @@ const path = require('path');
 app.get('*', (req, res) => {
 res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
+app.get("/hello",(req,res)=>res.send("Is it working?"))
 // if not in production use the port 3000
 const PORT = process.env.PORT || 5000;
 console.log('server started on port:',PORT);
